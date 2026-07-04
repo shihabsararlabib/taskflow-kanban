@@ -6,7 +6,7 @@ A modern, responsive Kanban Board built with **Next.js 16**, **TypeScript**, and
 
 ---
 
-## 🚀 Setup Instructions
+##  Setup Instructions
 
 ### Prerequisites
 - **Node.js** 18+ (LTS recommended)
@@ -37,7 +37,7 @@ npm start
 
 ---
 
-## ✅ Features Implemented
+##  Features Implemented
 
 ### Core Requirements
 
@@ -78,7 +78,7 @@ npm start
 
 ---
 
-## 🏗️ Technical Decisions
+##  Technical Decisions
 
 ### 1. Why @dnd-kit over react-beautiful-dnd
 
@@ -195,7 +195,7 @@ src/
 
 ---
 
-## 🔮 What I Would Improve With More Time
+##  What I Would Improve With More Time
 
 1. **Virtualized Lists**: Implement `react-window` or `@tanstack/virtual` for columns with 100+ tasks to improve scroll performance
 2. **Column Drag & Drop**: Allow reordering columns themselves, not just tasks
