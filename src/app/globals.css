@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-display: 'DotGothic16', 'Space Mono', ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-red: #ea2e2e;
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
+  --color-brand-gray-light: #f5f5f5;
+  --color-brand-gray-dark: #121212;
+  --color-border-light: #e5e5e5;
+  --color-border-dark: #2a2a2a;
+}
+
+:root {
+  --bg-color: var(--color-brand-gray-light);
+  --text-color: var(--color-brand-black);
+  --border-color: var(--color-border-light);
+  --card-bg: var(--color-brand-white);
+  --grid-color: rgba(0, 0, 0, 0.05);
+  --accent-color: var(--color-brand-red);
+}
+
+:root.dark {
+  --bg-color: var(--color-brand-gray-dark);
+  --text-color: var(--color-brand-gray-light);
+  --border-color: var(--color-border-dark);
+  --card-bg: var(--color-brand-black);
+  --grid-color: rgba(255, 255, 255, 0.05);
+  --accent-color: var(--color-brand-red);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  /* Engineer Grid Background */
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+}
+
+/* Nothing OS Sharp UI Overrides */
+.nothing-border {
+  border: 1px solid var(--border-color);
+}
+
+.nothing-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.dark .nothing-card {
+  box-shadow: none;
+}
+
+.nothing-button {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 9999px; /* Pill shape is common for secondary buttons */
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.nothing-button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.nothing-button-primary {
+  background-color: var(--accent-color);
+  color: white;
+  border: 1px solid var(--accent-color);
+  border-radius: 0;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.nothing-button-primary:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+/* Typography Helpers */
+.font-dot {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-left: 1px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}
+
+/* Content editable placeholder */
+[contenteditable]:empty:before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.dark [contenteditable]:empty:before {
+  color: #6b7280;
+}
+
+/* Selection color */
+::selection {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* Mobile touch improvements */
+@media (hover: none) {
+  .group:active .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+}
+
+/* Focus visible styles */
+*:focus-visible {
+  outline: 1px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 0;
+}
