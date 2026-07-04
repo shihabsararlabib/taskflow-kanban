@@ -216,4 +216,4 @@ MIT
 
 ---
 
-Built with ❤️ for the SammTech Frontend Internship Task
+Built with ❤️ by AABATT
