@@ -167,7 +167,7 @@ src/
 
 ---
 
-## 🧗 Challenges & Solutions
+##  Challenges & Solutions
 
 ### 1. Drag-and-Drop Between Columns + Reordering
 
